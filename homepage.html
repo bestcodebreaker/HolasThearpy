@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+</head>
+<style>
+    .dropbtn{
+        background-color: rgb(254, 229, 39);
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+    .dropbtn:hover, .dropbtn:focus{
+        background-color: rgb(254, 229, 39);
+    }
+    .dropdown{
+        position: relative;
+        display: inline-block;
+    }
+    .dropdown-content{
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        min-width: 160px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px;
+        z-index: 1;
+    }
+    .dropdown-content a{
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+    .dropdown a:hover{
+        background-color: #ddd;
+    }
+    .show{
+        display: block;
+    }
+ 
+    h1{
+        font-family: cursive;
+    }
+    .list{
+       background-color:  rgb(254, 229, 39);
+       overflow: auto;
+       white-space: nowrap;
+    }
+    .list a{
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px;
+        text-decoration: none;
+    }
+    .list a:hover {
+  background-color: #777;
+}
+   
+</style>
+<body>
+    <h1>Control your Mind, Body, and Spirit</h1>
+   <div class="list">
+  <a href="">Therapy</a> 
+  <a href="">Family</a>
+  <a href="">Emotional</a>
+  <a href="">Life Coaching</a>
+ 
+
+   </div>
+
+    <div class="dropdown">
+        <button onclick="button()" class="dropbtn">Menu</button>
+        <div id="mydrop" class="dropdown-content">
+            <a href="#">Contact</a>
+            <a href="./appt.html">Make an Appoinment</a>
+            
+
+
+        </div>
+    </div>
+   <script>
+    function button() {
+        document.getElementById("mydrop").classList.toggle("show");
+        
+    }
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = docuemnt.getElementByClassName("dropdown-content");
+            var i;
+            for (let i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show')
+                }
+                
+            }
+        }
+    }
+   </script> 
+</body>
+</html> 
